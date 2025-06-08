@@ -35,7 +35,7 @@ function CambiarContrasena() {
     }
 
     try {
-      await axios.put(`http://localhost:8080/api/usuarios/${id}/cambiar-contrasena`, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/usuarios/${id}/cambiar-contrasena`, {
         usuarioId: Number(id),
         contrasenaActual: actual,
         nuevaContrasena: nueva

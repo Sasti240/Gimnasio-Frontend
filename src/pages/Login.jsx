@@ -30,7 +30,7 @@ function Login() {
     setMensaje('');
 
     try {
-      const response = await axios.post('http://localhost:8080/api/usuarios/login', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/usuarios/login`, {
         correo: formData.correo,
         contrasena: formData.contrasena,
       });

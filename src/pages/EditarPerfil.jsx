@@ -58,7 +58,7 @@ function EditarPerfil() {
     }
 
     try {
-      await axios.put(`http://localhost:8080/api/usuarios/${id}`, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/usuarios/${id}`, {
         nombre,
         correo,
         telefono,
