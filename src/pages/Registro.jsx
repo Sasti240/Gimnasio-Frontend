@@ -39,7 +39,7 @@ function Registro() {
     }
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/usuarios`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/usuarios`, {
         ...formData,
         rol: 'usuario',
       });

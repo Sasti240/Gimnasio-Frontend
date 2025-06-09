@@ -21,7 +21,7 @@ function Rutinas() {
   useEffect(() => {
     if (!usuarioId) return;
 
-    axios.get(`${API_BASE_URL}/api/rutinas`)
+    axios.get(`${import.meta.env.VITE_API_URL}/api/rutinas`)
       .then(response => setRutinas(response.data))
       .catch(error => console.error('Error:', error));
 
@@ -31,7 +31,7 @@ function Rutinas() {
   const cargarRutinasAsignadas = () => {
     if (!usuarioId) return;
 
-    axios.get(`${API_BASE_URL}/api/rutinas-usuario/${usuarioId}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/api/rutinas-usuario/${usuarioId}`)
       .then(response => setRutinasAsignadas(response.data))
       .catch(error => console.error('Error:', error));
   };
@@ -44,7 +44,7 @@ function Rutinas() {
       rutinaId: Number(rutinaSeleccionada)
     };
 
-    axios.post(`${API_BASE_URL}/api/rutinas-usuario`, payload)
+    axios.post(`${import.meta.env.VITE_API_URL}/api/rutinas-usuario`, payload)
       .then(() => {
         cargarRutinasAsignadas();
         setRutinaSeleccionada('');
@@ -53,7 +53,7 @@ function Rutinas() {
   };
 
   const eliminarRutinaAsignada = (idAsignacion) => {
-    axios.delete(`${API_BASE_URL}/api/rutinas-usuario/${idAsignacion}`)
+    axios.delete(`${import.meta.env.VITE_API_URL}/api/rutinas-usuario/${idAsignacion}`)
       .then(() => cargarRutinasAsignadas())
       .catch(error => console.error('Error:', error));
   };

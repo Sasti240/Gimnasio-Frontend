@@ -21,7 +21,7 @@ function Concurrencia() {
     const obtenerConcurrencia = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/concurrencia`, {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/concurrencia`, {
           headers: { 'Cache-Control': 'no-cache' }
         });
         if (isMounted) setDatos(response.data);

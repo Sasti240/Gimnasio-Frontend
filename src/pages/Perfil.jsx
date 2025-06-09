@@ -36,7 +36,7 @@ function Perfil() {
       }
 
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/usuarios/${id}/perfil`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/usuarios/${id}/perfil`);
         setUsuario(response.data);
       } catch (err) {
         setError('Error al cargar el perfil');

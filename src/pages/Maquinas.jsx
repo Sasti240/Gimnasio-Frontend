@@ -23,7 +23,7 @@ function MaquinasList() {
 
   const fetchMaquinas = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/maquinas`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/maquinas`);
       setMaquinas(response.data.map(m => ({
         _id: m.id,
         nombre: m.nombre,
