@@ -31,7 +31,7 @@ function EditarPerfil() {
       }
 
       try {
-        const response = await axios.get(`http://localhost:8080/api/usuarios/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/usuarios/${id}`);
         setNombre(response.data.nombre);
         setCorreo(response.data.correo);
         setTelefono(response.data.telefono);
